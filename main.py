@@ -61,7 +61,7 @@ DB_NAME = config.DB_NAME
 db = Database(DB_URL, DB_NAME)
 
 
-BOT_TOKEN = "5618782891:AAHaNxV7WgvgqrPN6FdgVo1aFBSfkhj-xDs"
+BOT_TOKEN = "5457862323:AAFz4Zl5s8Xvyz8c-Q7wa9t2bl2oP6v39Ww"
 API_ID = "10098309"
 API_HASH = "aaacac243dddc9f0433c89cab8efe323"
 
