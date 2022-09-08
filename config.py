@@ -1,6 +1,6 @@
 import os
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "5618782891:AAHaNxV7WgvgqrPN6FdgVo1aFBSfkhj-xDs")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5457862323:AAFz4Zl5s8Xvyz8c-Q7wa9t2bl2oP6v39Ww")
 API_ID = int(os.environ.get("API_ID", "10098309"))
 API_HASH = os.environ.get("API_HASH", "aaacac243dddc9f0433c89cab8efe323")
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1001587861988"))
