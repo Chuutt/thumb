@@ -141,7 +141,7 @@ async def sts(c, m):
 # global variable to store path of the recent sended thumbnail
 thumb = ""
 metadata = video_metadata
-duration = metadata["duration"]
+duration = metadata(duration)
                 
 
 @Bot.on_message(filters.private & (filters.video | filters.document))
