@@ -139,7 +139,7 @@ async def sts(c, m):
 
 # global variable to store path of the recent sended thumbnail
 thumb = ""
-metadata = video_metadata(out)
+metadata = video_metadata
 width = metadata ["width"]
 height = metadata["height"]
 duration = metadata["duration"]
