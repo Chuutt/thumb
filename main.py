@@ -63,7 +63,7 @@ DB_NAME = config.DB_NAME
 db = Database(DB_URL, DB_NAME)
 
 
-BOT_TOKEN = "5457862323:AAFz4Zl5s8Xvyz8c-Q7wa9t2bl2oP6v39Ww"
+BOT_TOKEN = "5457862323:AAEsCDSaIih4meZXI6zflxVQps7w4RerQEo"
 API_ID = "10098309"
 API_HASH = "aaacac243dddc9f0433c89cab8efe323"
 
@@ -140,10 +140,10 @@ async def sts(c, m):
 # global variable to store path of the recent sended thumbnail
 thumb = ""
 metadata = video_metadata(out)
-                width = metadata["width"]
-                height = metadata["height"]
-                duration = metadata["duration"]
-                attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, supports_streaming=True)]
+width = metadata ["width"]
+height = metadata["height"]
+duration = metadata["duration"]
+attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, supports_streaming=True)]
                 
 
 @Bot.on_message(filters.private & (filters.video | filters.document))
