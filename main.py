@@ -163,7 +163,7 @@ async def thumb_change(bot, m):
     if m.document:
         await bot.send_document(chat_id=m.chat.id, document=file_dl_path, thumb=thumb, caption=m.caption if m.caption else None, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
     elif m.video:
-        await bot.send_video(chat_id=m.chat.id, video=file_dl_path, thumb=thumb, caption=m.caption if m.caption else None, duration, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
+        await bot.send_video(chat_id=m.chat.id, video=file_dl_path, thumb=thumb, duration=duration, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
     await msg.delete()
     os.remove(file_dl_path)
 
