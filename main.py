@@ -141,7 +141,7 @@ async def sts(c, m):
 # global variable to store path of the recent sended thumbnail
 thumb = ""
 metadata = video_metadata
-width = metadata["width"]
+width = metadata("width")
 height = metadata["height"]
 duration = metadata["duration"]
 attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, supports_streaming=True)]
