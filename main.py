@@ -5,6 +5,7 @@ from pyrogram.types import Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyromod import listen
 import config
+from telethon.tl.types import DocumentAttributeVideo
 from ethon.pyfunc import video_metadata
 from handlers.broadcast import broadcast
 from handlers.check_user import handle_user_status
@@ -138,6 +139,12 @@ async def sts(c, m):
 
 # global variable to store path of the recent sended thumbnail
 thumb = ""
+metadata = video_metadata(out)
+                width = metadata["width"]
+                height = metadata["height"]
+                duration = metadata["duration"]
+                attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, supports_streaming=True)]
+                
 
 @Bot.on_message(filters.private & (filters.video | filters.document))
 async def thumb_change(bot, m):
@@ -158,7 +165,7 @@ async def thumb_change(bot, m):
     if m.document:
         await bot.send_document(chat_id=m.chat.id, document=file_dl_path, thumb=thumb, caption=m.caption if m.caption else None, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
     elif m.video:
-        await bot.send_video(chat_id=m.chat.id, video=file_dl_path, thumb=thumb, caption=m.caption if m.caption else None, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
+        await bot.send_video(chat_id=m.chat.id, video=file_dl_path, thumb=thumb, caption=m.caption if m.caption else None, attributes=attributes, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
     await msg.delete()
     os.remove(file_dl_path)
 
