@@ -23,7 +23,7 @@ async def search_user_in_community(
     ):
     try:
         userChannel = await bot.get_chat_member(
-            '@DotexMovie',
+            'Codexun',
             msg.chat.id
         )
         if "kicked" in (userChannel.status):
@@ -64,7 +64,7 @@ DB_NAME = config.DB_NAME
 db = Database(DB_URL, DB_NAME)
 
 
-BOT_TOKEN = "5457862323:AAEsCDSaIih4meZXI6zflxVQps7w4RerQEo"
+BOT_TOKEN = "5618782891:AAEI6n09tMBpmUrND3twHpxQxHlAVczTF5Y"
 API_ID = "10098309"
 API_HASH = "aaacac243dddc9f0433c89cab8efe323"
 
@@ -140,8 +140,6 @@ async def sts(c, m):
 
 # global variable to store path of the recent sended thumbnail
 thumb = ""
-metadata = video_metadata
-duration = metadata(duration)
                 
 
 @Bot.on_message(filters.private & (filters.video | filters.document))
@@ -161,9 +159,9 @@ async def thumb_change(bot, m):
     msg = await m.reply("Setting new thumbnail..")
     c_time = time.time()
     if m.document:
-        await bot.send_document(chat_id=m.chat.id, document=file_dl_path, thumb=thumb, caption=m.caption if m.caption else None, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
+        await bot.send_document(chat_id=m.chat.id, document=file_dl_path, thumb=thumb, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
     elif m.video:
-        await bot.send_video(chat_id=m.chat.id, video=file_dl_path, thumb=thumb, duration=duration, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
+        await bot.send_video(chat_id=m.chat.id, video=file_dl_path, thumb=thumb, progress=progress_for_pyrogram, progress_args=("Uploading file..", msg, c_time))
     await msg.delete()
     os.remove(file_dl_path)
 
